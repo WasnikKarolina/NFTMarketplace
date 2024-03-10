@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.8.0;
+pragma solidity 0.8.20;
 
 contract Market {
     address public user;
@@ -20,12 +20,12 @@ contract Market {
     event NFTSold(uint256 tokenId, address buyer);
 
     function setPrice(uint256 tokenId, uint256 price) external {
-        require(msg.user == nfts[tokenId].owner, "You are not the owner of this NFT");
+        require(user == nfts[tokenId].owner, "You are not the owner of this NFT");
         nfts[tokenId].price = price;
     }
 
     function putOnMarket(uint256 tokenId) external {
-        require(msg.user == nfts[tokenId].owner, "You are not the owner of this NFT");
+        require(user == nfts[tokenId].owner, "You are not the owner of this NFT");
         nfts[tokenId].isOnMarket = true;
         emit NFTOnMarket(tokenId, nfts[tokenId].price);
     }
@@ -38,16 +38,16 @@ contract Market {
         currentOwner.transfer(msg.value);
 
         nfts[tokenId].isOnMarket = false;
-        nfts[tokenId].owner = msg.user;
-        userNFTs[msg.user].push(tokenId);
+        nfts[tokenId].owner = user;
+        userNFTs[user].push(tokenId);
 
-        emit NFTSold(tokenId, msg.user);
+        emit NFTSold(tokenId, user);
     }
     function getNFT(uint256 tokenId) external view returns (NFT memory) {
         return nfts[tokenId];
     }
     function addNFT(uint256 tokenId, uint256 price, address owner, bool isOnMarket) external {
-        nfts[tokenId] = NFT(tokenId, price, owner, isOnMarket);
+        nfts[tokenId] = NFT(owner, price, isOnMarket);
     }
 }
 
