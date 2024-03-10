@@ -1,6 +1,6 @@
 const Web3 = require('web3');
 const MarketABI = require('./MarketABI.json'); // Replace with the ABI of your Market contract
-const marketContractAddress = '0x123...'; // Replace with the address of your Market contract
+const marketContractAddress = '0x5A86858aA3b595FD6663c2296741eF4cd8BC4d01'; // Replace with the address of your Market contract
 const nfts = require('./NFTrepo.json'); // Load the JSON array of NFTs
 const AccountAddress = "0x3a3E804929EcdcE6B880a2A05516526C94B8296C";
 

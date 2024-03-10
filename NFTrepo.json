@@ -1,20 +1,22 @@
 [
+
   {
     "tokenId": 1,
-    "owner": "0x3a3E804929EcdcE6B880a2A05516526C94B8296C",
+    "owner": "0xB6f5e3137e9Ad7e1d06EaFe6913F2ae1bc1E0A5A",
     "price": "100000000000000000",
     "isOnMarket": false
   },
   {
     "tokenId": 2,
-    "owner": "0x3a3E804929EcdcE6B880a2A05516526C94B8296C",
+    "owner": "0xB6f5e3137e9Ad7e1d06EaFe6913F2ae1bc1E0A5A",
     "price": "200000000000000000",
     "isOnMarket": false
   },
   {
     "tokenId": 3,
-    "owner": "0x3a3E804929EcdcE6B880a2A05516526C94B8296C",
+    "owner": "0xB6f5e3137e9Ad7e1d06EaFe6913F2ae1bc1E0A5A",
     "price": "300000000000000000",
     "isOnMarket": false
   }
+
 ]

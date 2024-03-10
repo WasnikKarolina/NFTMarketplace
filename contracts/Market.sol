@@ -1,44 +1,33 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.0;
 
-//contract Market {
-//    struct NFTToken {
-//        uint tokenId;
-//        address owner;
-//        uint256 price;
-//        string metadataURI; // stores additional data like photo, description, date of creation etc
-////        address creator;
-//        string tokenURI; // link to an actual asset
-//    }
-//    constructor(){
-//
-//    }
-//
-//}
-// SPDX-License-Identifier: MIT
-pragma solidity 0.8.0;
-
 contract Market {
+    address public user;
+
+    constructor(address _user) {
+        user = _user;
+    }
     struct NFT {
         address owner;
         uint256 price;
         bool isOnMarket;
     }
-
+//    these mappings to be linked to a source of available on the market NFTs (we use NFTrepo.json as an instance)
     mapping(uint256 => NFT) public nfts;
     mapping(address => uint256[]) public userNFTs;
 
-//    These events help external applications to communicate. can be used in logic of another language
     event NFTOnMarket(uint256 tokenId, uint256 price);
     event NFTSold(uint256 tokenId, address buyer);
 
     function setPrice(uint256 tokenId, uint256 price) external {
-        require(msg.sender == nfts[tokenId].owner, "You are not the owner of this NFT");
+//        additional security checks. Disabled to be deployed in Remix
+        require(msg.user == nfts[tokenId].owner, "You are not the owner of this NFT");
         nfts[tokenId].price = price;
     }
 
     function putOnMarket(uint256 tokenId) external {
-        require(msg.sender == nfts[tokenId].owner, "You are not the owner of this NFT");
+//        additional security checks. Disabled to be deployed in Remix
+        require(msg.user == nfts[tokenId].owner, "You are not the owner of this NFT");
         nfts[tokenId].isOnMarket = true;
         emit NFTOnMarket(tokenId, nfts[tokenId].price);
     }
@@ -51,10 +40,19 @@ contract Market {
         currentOwner.transfer(msg.value);
 
         nfts[tokenId].isOnMarket = false;
-        nfts[tokenId].owner = msg.sender;
-        userNFTs[msg.sender].push(tokenId);
+        nfts[tokenId].owner = msg.user;
+        userNFTs[msg.user].push(tokenId);
 
-        emit NFTSold(tokenId, msg.sender);
+        emit NFTSold(tokenId, msg.user);
+    }
+    function getPrice(uint256 tokenId) external view returns(uint256){
+        return nfts[tokenId].price;
+    }
+    function getBoolean(uint256 tokenId) external view returns(bool){
+        return nfts[tokenId].isOnMarket;
+    }
+    function getNFT(uint256 tokenId) external view returns (NFT memory) {
+        return nfts[tokenId];
     }
 }
 
