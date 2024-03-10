@@ -20,13 +20,11 @@ contract Market {
     event NFTSold(uint256 tokenId, address buyer);
 
     function setPrice(uint256 tokenId, uint256 price) external {
-//        additional security checks. Disabled to be deployed in Remix
         require(msg.user == nfts[tokenId].owner, "You are not the owner of this NFT");
         nfts[tokenId].price = price;
     }
 
     function putOnMarket(uint256 tokenId) external {
-//        additional security checks. Disabled to be deployed in Remix
         require(msg.user == nfts[tokenId].owner, "You are not the owner of this NFT");
         nfts[tokenId].isOnMarket = true;
         emit NFTOnMarket(tokenId, nfts[tokenId].price);
@@ -45,14 +43,11 @@ contract Market {
 
         emit NFTSold(tokenId, msg.user);
     }
-    function getPrice(uint256 tokenId) external view returns(uint256){
-        return nfts[tokenId].price;
-    }
-    function getBoolean(uint256 tokenId) external view returns(bool){
-        return nfts[tokenId].isOnMarket;
-    }
     function getNFT(uint256 tokenId) external view returns (NFT memory) {
         return nfts[tokenId];
+    }
+    function addNFT(uint256 tokenId, uint256 price, address owner, bool isOnMarket) external {
+        nfts[tokenId] = NFT(tokenId, price, owner, isOnMarket);
     }
 }
 
