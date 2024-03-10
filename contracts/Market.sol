@@ -28,6 +28,7 @@ contract Market {
     mapping(uint256 => NFT) public nfts;
     mapping(address => uint256[]) public userNFTs;
 
+//    These events help external applications to communicate. can be used in logic of another language
     event NFTOnMarket(uint256 tokenId, uint256 price);
     event NFTSold(uint256 tokenId, address buyer);
 
