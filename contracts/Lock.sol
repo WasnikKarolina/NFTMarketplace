@@ -1,9 +1,13 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.24;
+//pragma solidity 0.8.0;
+// this version works for Remix
 
 // Uncomment this line to use console.log
 // import "hardhat/console.sol";
-
+// TODO: checked this contract in Remix. Works!
+// TODO: Think about a contract for marketplace
+// TODO: Test it in Remix
 contract Lock {
     uint public unlockTime;
     address payable public owner;
