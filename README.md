@@ -32,7 +32,7 @@ I would like to thank my teammates I worked with during the Hackathon
 
 - Aisari Amirov ([Github profile](https://github.com/AIsari017))
 - Filippo Vicini ([Github profile](https://github.com/FilippoVicini))
-- Karolina Wasnik ([Github profile](https://github.com/KarolinaWasnik))
+- Karolina Wasnik ([Github profile](https://github.com/WasnikKarolina))
 
 Great team!
 
