@@ -14,7 +14,6 @@ contract Market {
     }
 //    these mappings to be linked to a source of available on the market NFTs (we use NFTrepo.json as an instance)
     mapping(uint256 => NFT) public nfts;
-    mapping(address => uint256[]) public userNFTs;
 
     event NFTOnMarket(uint256 tokenId, uint256 price);
     event NFTSold(uint256 tokenId, address buyer);
@@ -39,7 +38,6 @@ contract Market {
 
         nfts[tokenId].isOnMarket = false;
         nfts[tokenId].owner = user;
-        userNFTs[user].push(tokenId);
 
         emit NFTSold(tokenId, user);
     }
