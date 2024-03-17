@@ -10,14 +10,18 @@ This application is a marketplace to buy, store and sell NFTs
 
 It is a Hardhat based project connected to Presto using the "leopardwest" network and deployed on Gateway software
 
-## How to use
-The deployed fully functional project is available on the platform: https://leopardwest-blockscout.eu-north-2.gateway.fm/ 
+## Scenario of usage
+To deploy a fully functional project follow these steps in the [guide](https://docs-presto.gateway.fm/overview):
+- Create a rollup
+- Download a hardhat configuration file
+- [Connect](https://docs-presto.gateway.fm/overview/features-for-developers/how-to-use-hardhat-with-presto) the network to the project 
+- Deploy the smart contract
 
-Connect your wallet on the website and select the "leopardwest" network on your account
+Connect your wallet on the website and select the network of your rollup on your account
 
-Follow the [link](https://leopardwest-faucet.eu-north-2.gateway.fm/) to request 1 ETH on this network (paste your account address in the input field)
+Follow the faucet link to request 1 ETH on this network (paste your account address in the input field)
 
-On the above-mentioned [platform](https://leopardwest-blockscout.eu-north-2.gateway.fm) now explore the functionality of the contract (Read and Write sections). You will be able to:
+On the platform of the deployed contract now explore the functionality of the contract (Read and Write sections). You will be able to:
 - Add a new NFT to the marketplace or to your own collection
 - View your NFTs, set a price and put on a market a chosen NFT
 - Buy NFTs available on the market
