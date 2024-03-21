@@ -32,14 +32,10 @@ On the platform of the deployed contract now explore the functionality of the co
 
 ## Outro
 
-I would like to thank my teammates I worked with during the Hackathon
+Huge thanks to my entire team: 
 
 - Aisari Amirov ([Github profile](https://github.com/AIsari017))
 - Filippo Vicini ([Github profile](https://github.com/FilippoVicini))
-- Karolina Wasnik ([Github profile](https://github.com/WasnikKarolina))
+- Danylo Piatyhorets ([Github profile](https://github.com/DanyloPiatyhorets))
 
-Great team!
-
-Please feel free to reach me out for any questions, clarifications, objections or suggestions regarding this application
-- Here via GitHub
-- Or via email: [Danylo.Piatyhorets@city.ac.uk](mailto:Danylo.Piatyhorets@city.ac.uk)
+As always, you guys were a pleasure to work with. Thank you!  
